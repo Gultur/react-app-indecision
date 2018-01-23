@@ -1,0 +1,6 @@
+live-server public
+babel src/app.js --out-file=public/script/app.js --presets=env,react --watch
+
+graceà la propriété script de webpack
+
+yarn run build
