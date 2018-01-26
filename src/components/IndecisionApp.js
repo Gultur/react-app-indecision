@@ -27,7 +27,9 @@ class IndecisionApp extends React.Component{
 
     }
 
-
+    //methode lifecycle,  qui se lance à l'initialisation
+    // les lifecycle ne sont disponibles que pour les classes
+    // un composant stateless ne peut pas l'utiliser
     componentDidMount(){
 
         try {
@@ -37,12 +39,19 @@ class IndecisionApp extends React.Component{
               if(options){ this.setState(() => ({options}));}
         } catch(e){}
     }
+
+    // methode lifecycle qui se lance après modifications des valeurs states ou props
+    // on peut passer les valeurs prevProps et preState en argument
+    
     componentDidUpdate(prevProps, prevState){
         if(prevState.options.length !== this.state.options.length){
             const json = JSON.stringify(this.state.options);
             localStorage.setItem('options', json);
         }
     }
+
+    // méthode lifecycle qui se lance quand le component est unmout
+  
     componentWillUnmount(){
         console.log('componentWillUnmount');
     }
