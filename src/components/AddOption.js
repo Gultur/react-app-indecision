@@ -1,15 +1,23 @@
 import React from 'react';
 
 export default class AddOption extends React.Component{
-    constructor(props){
+
+    state = {
+        error: undefined
+    };
+    //syntaxe sans le plug in tansform class
+    /*constructor(props){
         super(props);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
             error: undefined
         };
-    }
+    }*/
 
-    handleAddOption(e){
+    //syntaxe sans le plug in  tansform class
+    /*handleAddOption(e){*/
+
+    handleAddOption = (e) => {
         e.preventDefault();
         const option = (e.target.option.value).trim();
         // handleAddOption renvoie un message d'erreur si besoin
