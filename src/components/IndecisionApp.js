@@ -66,7 +66,7 @@ export default class IndecisionApp extends React.Component{
         console.log('componentWillUnmount');
     }*/
 
-    handleDeleteOption = () => {
+    handleDeleteOptions = () => {
         //old syntax
     /* handleDeleteOptions(){*/
         /*this.setState(() => {
@@ -156,11 +156,13 @@ export default class IndecisionApp extends React.Component{
                 <Header subtitle={this.state.subtitle}/>
                 <div className="container">
                     <Action hasOptions={this.state.options.length >0} handlePick={this.handlePickOption}/>
-                    <Options options={this.state.options}
-                    handleDeleteOptions={this.handleDeleteOptions}
-                    handleDeleteOption={this.handleDeleteOption}
-                    />
-                    <AddOption handleAddOption={this.handleAddOption}/>
+                    <div className="widget">
+                        <Options options={this.state.options}
+                        handleDeleteOptions={this.handleDeleteOptions}
+                        handleDeleteOption={this.handleDeleteOption}
+                        />
+                        <AddOption handleAddOption={this.handleAddOption}/>
+                    </div>
                 </div>
                 <OptionModal selectedOption={this.state.selectedOption} handleClearselectedOption={this.handleClearselectedOption}/>
             </div>
